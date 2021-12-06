@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://Horizon.ExternalServices" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Horizon.ExternalServices">
+  <xs:import schemaLocation="AFSService_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.General"/>
+  <xs:complexType name="UserBase">
+    <xs:sequence>
+      <xs:element name="Username" nillable="true" type="xs:string"/>
+      <xs:element name="Password" nillable="true" type="xs:string"/>
+      <xs:element name="ClientID" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserBase" nillable="true" type="tns:UserBase"/>
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfResponseMessageBase"/>
+      <xs:element minOccurs="0" name="InfoMessages" nillable="true" type="tns:ArrayOfResponseMessageBase"/>
+      <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase"/>
+  <xs:complexType name="ArrayOfResponseMessageBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResponseMessageBase" nillable="true" type="tns:ResponseMessageBase"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponseMessageBase" nillable="true" type="tns:ArrayOfResponseMessageBase"/>
+  <xs:complexType name="ResponseMessageBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int"/>
+      <xs:element minOccurs="0" name="ErrorType" type="q1:MessageTypes" xmlns:q1="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.General"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseMessageBase" nillable="true" type="tns:ResponseMessageBase"/>
+</xs:schema>

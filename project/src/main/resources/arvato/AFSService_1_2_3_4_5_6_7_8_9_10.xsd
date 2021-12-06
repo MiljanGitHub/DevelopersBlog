@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Client" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Client">
+  <xs:import schemaLocation="AFSService_1.xsd" namespace="http://Horizon.ExternalServices.AFS"/>
+  <xs:complexType name="AFSGetClientLimitResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:AFSResponseBase" xmlns:q1="http://Horizon.ExternalServices.AFS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientLimit" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ClientLimitRemaining" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OutstandingBalance" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetClientLimitResponse" nillable="true" type="tns:AFSGetClientLimitResponse"/>
+</xs:schema>

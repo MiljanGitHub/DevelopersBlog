@@ -1,0 +1,12 @@
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               version="1.0">
+    <jaxb:bindings schemaLocation="https://clienttesthorizon.horizonafs.com/AFSServices/AFSService.svc?xsd=xsd2">
+        <jaxb:bindings node="//xs:element[@name='AFSInvoiceAccountInfo']">
+            <jaxb:factoryMethod name="AFSInvoiceAccountInfo"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:element[@name='AccountInfo']">
+            <jaxb:factoryMethod name="AccountInfo"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

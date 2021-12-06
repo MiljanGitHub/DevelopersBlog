@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Reservation" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Reservation">
+  <xs:simpleType name="AFSPaymentMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet"/>
+      <xs:enumeration value="Invoice"/>
+      <xs:enumeration value="DirectDebet"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AFSPaymentMethod" nillable="true" type="tns:AFSPaymentMethod"/>
+</xs:schema>

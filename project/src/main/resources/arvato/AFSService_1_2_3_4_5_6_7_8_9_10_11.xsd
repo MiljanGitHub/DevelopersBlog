@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AFSServices.Entities.Customer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/AFSServices.Entities.Customer">
+  <xs:import schemaLocation="AFSService_1.xsd" namespace="http://Horizon.ExternalServices.AFS"/>
+  <xs:complexType name="AFSUpdateCustomerEinvoiceInfoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:AFSResponse" xmlns:q1="http://Horizon.ExternalServices.AFS">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateCustomerEinvoiceInfoResponse" nillable="true" type="tns:AFSUpdateCustomerEinvoiceInfoResponse"/>
+</xs:schema>

@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://Horizon.ExternalServices.AFS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Horizon.ExternalServices.AFS">
+  <xs:import schemaLocation="AFSService_1_2.xsd" namespace="http://Horizon.ExternalServices"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Customer"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6_7.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6_7_8.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6_7_8_9.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Reservation"/>
+  <xs:complexType name="AFSUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:UserBase" xmlns:q1="http://Horizon.ExternalServices">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUser" nillable="true" type="tns:AFSUser"/>
+  <xs:complexType name="AFSCustomerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:AFSCustomerOutput"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerResponse" nillable="true" type="tns:AFSCustomerResponse"/>
+  <xs:complexType name="AFSResponseBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q2:ResponseBase" xmlns:q2="http://Horizon.ExternalServices">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSResponseBase" nillable="true" type="tns:AFSResponseBase"/>
+  <xs:complexType name="AFSCustomerOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="tns:ArrayOfAFSCustomerAdditionalInfoEntry"/>
+          <xs:element minOccurs="0" name="BankAccount" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_Address" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_FirstName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_LastName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_Organization_PersonalNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_PaymentExperience" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_PostalCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CI_PostalPlace" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CreditLimit" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CurrencyDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerBalance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CustomerBalanceBought" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CustomerBalanceOverDue" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="DirectDebetStatus" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InterestStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="InterestStopDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="InvalidOrganization_PersonalNo" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="LoanStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PurchaseStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RatingDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ReminderStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ReminderStopDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerOutput" nillable="true" type="tns:AFSCustomerOutput"/>
+  <xs:complexType name="AFSCustomer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element name="Address" nillable="true" type="xs:string"/>
+          <xs:element name="CountryCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustNo" nillable="true" type="xs:string"/>
+          <xs:element name="CustomerCategory" type="q3:AFSCustomerCategory" xmlns:q3="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="DirectPhone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DistributionBy" type="q4:AFSDistributionBy" xmlns:q4="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="DistributionType" type="q5:AFSDistributionType" xmlns:q5="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+          <xs:element name="LastName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization_PersonalNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string"/>
+          <xs:element name="PostalCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PostalPlace" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SocialTitle" type="q6:AFSSocialTitle" xmlns:q6="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Customer"/>
+          <xs:element minOccurs="0" name="StatCodeAlphaNumeric" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatCodeNumeric" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomer" nillable="true" type="tns:AFSCustomer"/>
+  <xs:complexType name="AFSObjectBase">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="AFSObjectBase" nillable="true" type="tns:AFSObjectBase"/>
+  <xs:complexType name="ArrayOfAFSCustomerAdditionalInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSCustomerAdditionalInfoEntry" nillable="true" type="tns:AFSCustomerAdditionalInfoEntry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSCustomerAdditionalInfoEntry" nillable="true" type="tns:ArrayOfAFSCustomerAdditionalInfoEntry"/>
+  <xs:complexType name="AFSCustomerAdditionalInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSCustomerAdditionalInfoEntry" nillable="true" type="tns:AFSCustomerAdditionalInfoEntry"/>
+  <xs:complexType name="AFSSearchOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOptionsBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RatingUpdateType" type="q7:AFSRatingUpdateType" xmlns:q7="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="SearchType" type="q8:AFSSearchType" xmlns:q8="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSSearchOptions" nillable="true" type="tns:AFSSearchOptions"/>
+  <xs:complexType name="AFSOptionsBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOptionsBase" nillable="true" type="tns:AFSOptionsBase"/>
+  <xs:complexType name="AFSCustomerPurchaseResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PurchaseStatus" nillable="true" type="tns:AFSPurchaseStatus"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerPurchaseResponse" nillable="true" type="tns:AFSCustomerPurchaseResponse"/>
+  <xs:complexType name="AFSPurchaseStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeclineReasons" nillable="true" type="tns:ArrayOfAFSPurchaseDeclineReason"/>
+          <xs:element minOccurs="0" name="PurchaseStatus" type="tns:AFSPurchaseStatusCodes"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSPurchaseStatus" nillable="true" type="tns:AFSPurchaseStatus"/>
+  <xs:complexType name="ArrayOfAFSPurchaseDeclineReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSPurchaseDeclineReason" nillable="true" type="tns:AFSPurchaseDeclineReason"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSPurchaseDeclineReason" nillable="true" type="tns:ArrayOfAFSPurchaseDeclineReason"/>
+  <xs:complexType name="AFSPurchaseDeclineReason">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeclineDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeclineReason" type="q9:AFSPurchaseDeclineReasonCodes" xmlns:q9="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSPurchaseDeclineReason" nillable="true" type="tns:AFSPurchaseDeclineReason"/>
+  <xs:simpleType name="AFSPurchaseStatusCodes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotAccepted"/>
+      <xs:enumeration value="Accepted"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AFSPurchaseStatusCodes" nillable="true" type="tns:AFSPurchaseStatusCodes"/>
+  <xs:complexType name="AFSCustomerLimitRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSCustomerLimitRequest" nillable="true" type="tns:AFSCustomerLimitRequest"/>
+  <xs:complexType name="AFSCustomerLimitResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerLimitRemaining" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CustomerLimitRemainingWithAccount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerLimitResponse" nillable="true" type="tns:AFSCustomerLimitResponse"/>
+  <xs:complexType name="AFSLedgerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ledger" nillable="true" type="tns:AFSLedger"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSLedgerResponse" nillable="true" type="tns:AFSLedgerResponse"/>
+  <xs:complexType name="AFSLedger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Balance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="DueBalance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="InterestAndFeeBalance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="InvoiceBalance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="PaymentBalance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Vouchers" nillable="true" type="tns:ArrayOfAFSVoucher"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSLedger" nillable="true" type="tns:AFSLedger"/>
+  <xs:complexType name="ArrayOfAFSVoucher">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSVoucher" nillable="true" type="tns:AFSVoucher"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSVoucher" nillable="true" type="tns:ArrayOfAFSVoucher"/>
+  <xs:complexType name="AFSVoucher">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Currency" type="xs:double"/>
+          <xs:element minOccurs="0" name="CurrencyAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CurrencyRemainder" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="DueDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Interest" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IsBought" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsCreditNote" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsInterestNote" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsInterestOrFee" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsInvoice" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsOpen" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsPayment" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsReminderStoppped" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="LastEvent" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NetAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Remainder" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="StatCodeAlfaNum" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatCodeNum" type="xs:int"/>
+          <xs:element minOccurs="0" name="VoucherAgeInDays" type="xs:int"/>
+          <xs:element minOccurs="0" name="VoucherCategoryCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="VoucherDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="VoucherNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="VoucherTypeCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="VoucherTypeDesc" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSVoucher" nillable="true" type="tns:AFSVoucher"/>
+  <xs:complexType name="AFSLedgerOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOptionsBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OnlyOpenVouchers" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSLedgerOptions" nillable="true" type="tns:AFSLedgerOptions"/>
+  <xs:complexType name="AFSResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSResponse" nillable="true" type="tns:AFSResponse"/>
+  <xs:complexType name="AFSInvoiceGetResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:AFSInvoiceOutput"/>
+          <xs:element minOccurs="0" name="PurchaseStatus" nillable="true" type="tns:AFSPurchaseStatus"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceGetResponse" nillable="true" type="tns:AFSInvoiceGetResponse"/>
+  <xs:complexType name="AFSInvoiceOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSInvoice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountingMonth" type="xs:int"/>
+          <xs:element minOccurs="0" name="AccountingYear" type="xs:int"/>
+          <xs:element minOccurs="0" name="Balance" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="BuyCancelledDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="BuyDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="BuyStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CashDiscountBalance" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CashDiscountDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CashDiscountUsed" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Ins" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="InterestStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="InterestStopDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="IsBought" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="IsInterestNote" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="LastEvent" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NextEvent" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProductionStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ReminderStop" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ReminderStopDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="SentToDebtCollection" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceOutput" nillable="true" type="tns:AFSInvoiceOutput"/>
+  <xs:complexType name="AFSInvoice">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountInfo" nillable="true" type="tns:AFSInvoiceAccountInfo"/>
+          <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="tns:ArrayOfAFSAdditionalInfoEntry"/>
+          <xs:element name="Amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CashDiscountDaysToDueDate" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="CashDiscountDueDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="CashDiscountPercent" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CashDiscountTerm" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="CrossedInvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CurrencyAmount" nillable="true" type="xs:decimal"/>
+          <xs:element name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryCity" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryCountry" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryPostCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DirectDebetBankAccountNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DirectDebetBankID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DiscountProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DueDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="InvoiceLines" nillable="true" type="tns:ArrayOfAFSInvoiceLine"/>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InvoiceProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="KID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MerchantID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OurRef" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatcodeAlphaNum" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatcodeNum" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="VATAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="YourRef" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoice" nillable="true" type="tns:AFSInvoice"/>
+  <xs:complexType name="AFSInvoiceAccountInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="NumberOfDownPaymentMonths" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceAccountInfo" nillable="true" type="tns:AFSInvoiceAccountInfo"/>
+  <xs:complexType name="ArrayOfAFSAdditionalInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSAdditionalInfoEntry" nillable="true" type="tns:AFSAdditionalInfoEntry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSAdditionalInfoEntry" nillable="true" type="tns:ArrayOfAFSAdditionalInfoEntry"/>
+  <xs:complexType name="AFSAdditionalInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSAdditionalInfoEntry" nillable="true" type="tns:AFSAdditionalInfoEntry"/>
+  <xs:complexType name="ArrayOfAFSInvoiceLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSInvoiceLine" nillable="true" type="tns:AFSInvoiceLine"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSInvoiceLine" nillable="true" type="tns:ArrayOfAFSInvoiceLine"/>
+  <xs:complexType name="AFSInvoiceLine">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GrossAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ItemID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LeftText" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LineNumber" type="xs:int"/>
+          <xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="RightText" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TaxAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="TaxPercent" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="UnitCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceLine" nillable="true" type="tns:AFSInvoiceLine"/>
+  <xs:complexType name="AFSInvoiceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:AFSCustomerOutput"/>
+          <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:AFSInvoiceOutput"/>
+          <xs:element minOccurs="0" name="PurchaseStatus" nillable="true" type="tns:AFSPurchaseStatus"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceResponse" nillable="true" type="tns:AFSInvoiceResponse"/>
+  <xs:complexType name="AFSPrintOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOptionsBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceDistributionBy" type="q10:AFSInvoiceDistributionBy" xmlns:q10="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="InvoiceDistributionType" type="q11:AFSInvoiceDistributionType" xmlns:q11="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSPrintOptions" nillable="true" type="tns:AFSPrintOptions"/>
+  <xs:complexType name="AFSInvoiceCreditResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSInvoiceGetResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreditNote" nillable="true" type="tns:AFSInvoiceOutput"/>
+          <xs:element minOccurs="0" name="CreditedAmount" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceCreditResponse" nillable="true" type="tns:AFSInvoiceCreditResponse"/>
+  <xs:complexType name="AFSOrderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:AFSCustomerOutput"/>
+          <xs:element minOccurs="0" name="CustomerCheckStatus" nillable="true" type="tns:AFSCustomerCheckStatus"/>
+          <xs:element minOccurs="0" name="Order" nillable="true" type="tns:AFSOrderOutput"/>
+          <xs:element minOccurs="0" name="PurchaseStatus" nillable="true" type="tns:AFSPurchaseStatus"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderResponse" nillable="true" type="tns:AFSOrderResponse"/>
+  <xs:complexType name="AFSCustomerCheckStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerCheckStatus" type="tns:AFSCustomerCheckStatusCodes"/>
+          <xs:element minOccurs="0" name="DeclineReasons" nillable="true" type="tns:ArrayOfAFSCustomerCheckDeclineReason"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerCheckStatus" nillable="true" type="tns:AFSCustomerCheckStatus"/>
+  <xs:simpleType name="AFSCustomerCheckStatusCodes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotAccepted"/>
+      <xs:enumeration value="Accepted"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AFSCustomerCheckStatusCodes" nillable="true" type="tns:AFSCustomerCheckStatusCodes"/>
+  <xs:complexType name="ArrayOfAFSCustomerCheckDeclineReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSCustomerCheckDeclineReason" nillable="true" type="tns:AFSCustomerCheckDeclineReason"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSCustomerCheckDeclineReason" nillable="true" type="tns:ArrayOfAFSCustomerCheckDeclineReason"/>
+  <xs:complexType name="AFSCustomerCheckDeclineReason">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeclineDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeclineReason" type="q12:AFSCustomerCheckReasonCodes" xmlns:q12="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCustomerCheckDeclineReason" nillable="true" type="tns:AFSCustomerCheckDeclineReason"/>
+  <xs:complexType name="AFSOrderOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOrder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GrossAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="GrossAmountCurrency" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Ins" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NetAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NetAmountCurrency" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OrderActivationType" nillable="true" type="q13:AFSOrderActivationType" xmlns:q13="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger"/>
+          <xs:element minOccurs="0" name="OrderLinesOutput" nillable="true" type="tns:ArrayOfAFSOrderLineOutput"/>
+          <xs:element minOccurs="0" name="OrderStatus" type="q14:AFSOrderStatus" xmlns:q14="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="OrderStatusDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PurchaseReservedAmount" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="PurchaseReservedEndDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Upd" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderOutput" nillable="true" type="tns:AFSOrderOutput"/>
+  <xs:complexType name="AFSOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowPartlyShipment" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string"/>
+          <xs:element name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryCountryCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryPostalCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryPostalPlace" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DirectDebetBankAccountNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DirectDebetBankID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DiscountProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="EstimatedShipDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="InvoiceLayoutNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="InvoiceProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="OrderLines" nillable="true" type="tns:ArrayOfAFSOrderLine"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OurRef" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatCodeAlphaNum" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatCodeNum" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YourRef" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrder" nillable="true" type="tns:AFSOrder"/>
+  <xs:complexType name="ArrayOfAFSOrderLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSOrderLine" nillable="true" type="tns:AFSOrderLine"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSOrderLine" nillable="true" type="tns:ArrayOfAFSOrderLine"/>
+  <xs:complexType name="AFSOrderLine">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element name="ItemDescription" nillable="true" type="xs:string"/>
+          <xs:element name="ItemID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderLineNo" nillable="true" type="xs:int"/>
+          <xs:element name="Quantity" type="xs:decimal"/>
+          <xs:element name="TaxPercent" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="UnitCode" nillable="true" type="xs:string"/>
+          <xs:element name="UnitPrice" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderLine" nillable="true" type="tns:AFSOrderLine"/>
+  <xs:complexType name="ArrayOfAFSOrderLineOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSOrderLineOutput" nillable="true" type="tns:AFSOrderLineOutput"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSOrderLineOutput" nillable="true" type="tns:ArrayOfAFSOrderLineOutput"/>
+  <xs:complexType name="AFSOrderLineOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOrderLine">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CancelledQuantity" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="FormatGroup" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="FormatStyle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="GrossAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NetAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ProposedAccountId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProposedAccountText" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ShippedQuantity" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="TaxAmount" nillable="true" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderLineOutput" nillable="true" type="tns:AFSOrderLineOutput"/>
+  <xs:complexType name="AFSOrderSearchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfAFSOrderSearch"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderSearchResponse" nillable="true" type="tns:AFSOrderSearchResponse"/>
+  <xs:complexType name="ArrayOfAFSOrderSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSOrderSearch" nillable="true" type="tns:AFSOrderSearch"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSOrderSearch" nillable="true" type="tns:ArrayOfAFSOrderSearch"/>
+  <xs:complexType name="AFSOrderSearch">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerFullname" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EstimatedShipDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="GrossAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NetAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderStatus" type="q15:AFSOrderStatus" xmlns:q15="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+          <xs:element minOccurs="0" name="OrderStatusDesc" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderSearch" nillable="true" type="tns:AFSOrderSearch"/>
+  <xs:complexType name="AFSOrderOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOptionsBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountOfferType" type="q16:AccountOfferType" xmlns:q16="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+          <xs:element minOccurs="0" name="NoInvoicePurchase" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="OrderActivationType" type="q17:AFSOrderActivationType" xmlns:q17="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderOptions" nillable="true" type="tns:AFSOrderOptions"/>
+  <xs:complexType name="AFSOrderShipmentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOrderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:AFSInvoiceOutput"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderShipmentResponse" nillable="true" type="tns:AFSOrderShipmentResponse"/>
+  <xs:complexType name="AFSOrderShipment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fee" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ShipmentCost" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ShipmentDetails" nillable="true" type="tns:ArrayOfAFSOrderShipmentDetail"/>
+          <xs:element minOccurs="0" name="ShipmentPackageNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ShipmentProvider" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderShipment" nillable="true" type="tns:AFSOrderShipment"/>
+  <xs:complexType name="ArrayOfAFSOrderShipmentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSOrderShipmentDetail" nillable="true" type="tns:AFSOrderShipmentDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSOrderShipmentDetail" nillable="true" type="tns:ArrayOfAFSOrderShipmentDetail"/>
+  <xs:complexType name="AFSOrderShipmentDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderLineNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="QuantityShip" nillable="true" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderShipmentDetail" nillable="true" type="tns:AFSOrderShipmentDetail"/>
+  <xs:complexType name="AFSReportDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportDocument" nillable="true" type="tns:AFSReportDocument"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReportDocumentResponse" nillable="true" type="tns:AFSReportDocumentResponse"/>
+  <xs:complexType name="AFSReportDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileData" nillable="true" type="xs:base64Binary"/>
+          <xs:element minOccurs="0" name="FileExtension" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReportDocument" nillable="true" type="tns:AFSReportDocument"/>
+  <xs:complexType name="AFSReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfAFSReportParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReport" nillable="true" type="tns:AFSReport"/>
+  <xs:complexType name="ArrayOfAFSReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSReportParameter" nillable="true" type="tns:AFSReportParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSReportParameter" nillable="true" type="tns:ArrayOfAFSReportParameter"/>
+  <xs:complexType name="AFSReportParameter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReportParameter" nillable="true" type="tns:AFSReportParameter"/>
+  <xs:complexType name="AFSReportLinkResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportLink" nillable="true" type="tns:AFSReportLink"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReportLinkResponse" nillable="true" type="tns:AFSReportLinkResponse"/>
+  <xs:complexType name="AFSReportLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportLink" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReportLink" nillable="true" type="tns:AFSReportLink"/>
+  <xs:complexType name="AFSOrderShipmentInvoiceInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="KID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSOrderShipmentInvoiceInfo" nillable="true" type="tns:AFSOrderShipmentInvoiceInfo"/>
+  <xs:complexType name="ArrayOfAFSInvoiceCreditInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSInvoiceCreditInfo" nillable="true" type="tns:AFSInvoiceCreditInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSInvoiceCreditInfo" nillable="true" type="tns:ArrayOfAFSInvoiceCreditInfo"/>
+  <xs:complexType name="AFSInvoiceCreditInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceCreditInfo" nillable="true" type="tns:AFSInvoiceCreditInfo"/>
+  <xs:complexType name="AFSCreditOrderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSOrderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreditInvoices" nillable="true" type="tns:ArrayOfAFSInvoiceOutput"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCreditOrderResponse" nillable="true" type="tns:AFSCreditOrderResponse"/>
+  <xs:complexType name="ArrayOfAFSInvoiceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSInvoiceOutput" nillable="true" type="tns:AFSInvoiceOutput"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSInvoiceOutput" nillable="true" type="tns:ArrayOfAFSInvoiceOutput"/>
+  <xs:complexType name="AFSAccountTermsAndConditionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountTermsAndConditionsRequest" nillable="true" type="tns:AFSAccountTermsAndConditionsRequest"/>
+  <xs:complexType name="AFSAccountTermsAndConditionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountTermsAndConditions" nillable="true" type="tns:AFSAccountTermsAndConditions"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountTermsAndConditionsResponse" nillable="true" type="tns:AFSAccountTermsAndConditionsResponse"/>
+  <xs:complexType name="AFSAccountTermsAndConditions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcceptID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RequireCustomerConfirmation" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="TermsAndConditions" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSAccountTermsAndConditions" nillable="true" type="tns:AFSAccountTermsAndConditions"/>
+  <xs:complexType name="AFSAccountTermsAndConditionsSecciRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NumberOfInstallments" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountTermsAndConditionsSecciRequest" nillable="true" type="tns:AFSAccountTermsAndConditionsSecciRequest"/>
+  <xs:complexType name="AFSAccountTermsAndConditionsSecciResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountTermsAndConditions" nillable="true" type="tns:AFSAccountTermsAndConditions"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountTermsAndConditionsSecciResponse" nillable="true" type="tns:AFSAccountTermsAndConditionsSecciResponse"/>
+  <xs:complexType name="AFSAcceptAccountTermsAndConditionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAcceptAccountTermsAndConditionsRequest" nillable="true" type="tns:AFSAcceptAccountTermsAndConditionsRequest"/>
+  <xs:complexType name="AFSAcceptAccountTermsAndConditionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAcceptAccountTermsAndConditionsResponse" nillable="true" type="tns:AFSAcceptAccountTermsAndConditionsResponse"/>
+  <xs:complexType name="AFSAccountCheckCustomerHasAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountCheckCustomerHasAccountRequest" nillable="true" type="tns:AFSAccountCheckCustomerHasAccountRequest"/>
+  <xs:complexType name="AFSAccountCheckCustomerHasAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:int"/>
+          <xs:element minOccurs="0" name="HasAccount" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAccountCheckCustomerHasAccountResponse" nillable="true" type="tns:AFSAccountCheckCustomerHasAccountResponse"/>
+  <xs:complexType name="AFSReservation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountOfferType" type="q18:AccountOfferType" xmlns:q18="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservation" nillable="true" type="tns:AFSReservation"/>
+  <xs:complexType name="AFSReservationOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSReservation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReservationID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservationOutput" nillable="true" type="tns:AFSReservationOutput"/>
+  <xs:complexType name="AFSReservationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:AFSReservationOutput"/>
+          <xs:element minOccurs="0" name="ReservationApproved" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservationResponse" nillable="true" type="tns:AFSReservationResponse"/>
+  <xs:complexType name="AFSReservationWithPaymentType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountOfferType" type="q19:AccountOfferType" xmlns:q19="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+          <xs:element minOccurs="0" name="AccountProfileNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PaymentType" type="q20:PaymentType" xmlns:q20="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservationWithPaymentType" nillable="true" type="tns:AFSReservationWithPaymentType"/>
+  <xs:complexType name="AFSReservationWithPaymentTypeOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSReservation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReservationID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservationWithPaymentTypeOutput" nillable="true" type="tns:AFSReservationWithPaymentTypeOutput"/>
+  <xs:complexType name="AFSReservationWithPaymentTypeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceApproved" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:AFSReservationWithPaymentTypeOutput"/>
+          <xs:element minOccurs="0" name="ReservationApproved" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSReservationWithPaymentTypeResponse" nillable="true" type="tns:AFSReservationWithPaymentTypeResponse"/>
+  <xs:complexType name="AFSCancelReservation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCancelReservation" nillable="true" type="tns:AFSCancelReservation"/>
+  <xs:complexType name="AFSCancelReservationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCancelReservationResponse" nillable="true" type="tns:AFSCancelReservationResponse"/>
+  <xs:complexType name="AFSAdditionalReservationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DirectDebetBankAccount" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DirectDebetBankID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InstallmentInfo" nillable="true" type="tns:AFSInstallmentInfo"/>
+          <xs:element minOccurs="0" name="OrderLines" nillable="true" type="tns:ArrayOfAFSOrderLine"/>
+          <xs:element minOccurs="0" name="PaymentMethod" type="q21:AFSPaymentMethod" xmlns:q21="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Reservation"/>
+          <xs:element minOccurs="0" name="TermsAndConditionAcceptID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAdditionalReservationInfo" nillable="true" type="tns:AFSAdditionalReservationInfo"/>
+  <xs:complexType name="AFSInstallmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumberOfInstallments" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSInstallmentInfo" nillable="true" type="tns:AFSInstallmentInfo"/>
+  <xs:complexType name="AFSCheckCustomerAndReservationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:AFSCustomerOutput"/>
+          <xs:element minOccurs="0" name="CustomerFound" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:AFSReservationOutput"/>
+          <xs:element minOccurs="0" name="ReservationApproved" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="TemporaryExternalProblem" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSCheckCustomerAndReservationResponse" nillable="true" type="tns:AFSCheckCustomerAndReservationResponse"/>
+  <xs:complexType name="AFSInvoiceTextRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountOfferType" type="q22:AccountOfferType" xmlns:q22="http://schemas.datacontract.org/2004/07/Horizon.AFS.General.Ledger.Reservation"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InvoiceAmount" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceTextRequest" nillable="true" type="tns:AFSInvoiceTextRequest"/>
+  <xs:complexType name="AFSInvoiceTextResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceText" nillable="true" type="tns:AFSInvoiceTextOutput"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceTextResponse" nillable="true" type="tns:AFSInvoiceTextResponse"/>
+  <xs:complexType name="AFSInvoiceTextOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountOfferMinimumToPay" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="AccountOfferText" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InvoiceTextInfo" nillable="true" type="tns:ArrayOfAFSInvoiceTextInfoEntry"/>
+          <xs:element minOccurs="0" name="LogonText" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OCRNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceTextOutput" nillable="true" type="tns:AFSInvoiceTextOutput"/>
+  <xs:complexType name="ArrayOfAFSInvoiceTextInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFSInvoiceTextInfoEntry" nillable="true" type="tns:AFSInvoiceTextInfoEntry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFSInvoiceTextInfoEntry" nillable="true" type="tns:ArrayOfAFSInvoiceTextInfoEntry"/>
+  <xs:complexType name="AFSInvoiceTextInfoEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSInvoiceTextInfoEntry" nillable="true" type="tns:AFSInvoiceTextInfoEntry"/>
+  <xs:complexType name="AFSUpdateInvoiceDueDateRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DueDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateInvoiceDueDateRequest" nillable="true" type="tns:AFSUpdateInvoiceDueDateRequest"/>
+  <xs:complexType name="AFSUpdateInvoiceDueDateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateInvoiceDueDateResponse" nillable="true" type="tns:AFSUpdateInvoiceDueDateResponse"/>
+  <xs:complexType name="AFSUpdateInvoiceStopFlagsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Interest" nillable="true" type="tns:AFSStopFlag"/>
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Reminder" nillable="true" type="tns:AFSStopFlag"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateInvoiceStopFlagsRequest" nillable="true" type="tns:AFSUpdateInvoiceStopFlagsRequest"/>
+  <xs:complexType name="AFSStopFlag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Stop" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSStopFlag" nillable="true" type="tns:AFSStopFlag"/>
+  <xs:complexType name="AFSUpdateInvoiceStopFlagsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateInvoiceStopFlagsResponse" nillable="true" type="tns:AFSUpdateInvoiceStopFlagsResponse"/>
+  <xs:complexType name="AFSUpdateMerchantInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="COAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:base64Binary"/>
+          <xs:element minOccurs="0" name="MerchantID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MerchantName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MerchantOrgno" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OpeningHours" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OtherInformation" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="VATNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="WebAddress" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateMerchantInfoRequest" nillable="true" type="tns:AFSUpdateMerchantInfoRequest"/>
+  <xs:complexType name="AFSUpdateMerchantInfoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateMerchantInfoResponse" nillable="true" type="tns:AFSUpdateMerchantInfoResponse"/>
+  <xs:complexType name="AFSGetDirectDebitContractRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BIC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetDirectDebitContractRequest" nillable="true" type="tns:AFSGetDirectDebitContractRequest"/>
+  <xs:complexType name="AFSGetDirectDebitContractResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DirectDebitContract" nillable="true" type="tns:AFSDirectDebitContract"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetDirectDebitContractResponse" nillable="true" type="tns:AFSGetDirectDebitContractResponse"/>
+  <xs:complexType name="AFSDirectDebitContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcceptID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AcceptRequired" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ContractAgreementText" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFSDirectDebitContract" nillable="true" type="tns:AFSDirectDebitContract"/>
+  <xs:complexType name="AFSAcceptDirectDebitContractRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAcceptDirectDebitContractRequest" nillable="true" type="tns:AFSAcceptDirectDebitContractRequest"/>
+  <xs:complexType name="AFSAcceptDirectDebitContractResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponseBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSAcceptDirectDebitContractResponse" nillable="true" type="tns:AFSAcceptDirectDebitContractResponse"/>
+  <xs:complexType name="AFSGetClientLimitRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetClientLimitRequest" nillable="true" type="tns:AFSGetClientLimitRequest"/>
+  <xs:complexType name="AFSGetVirtualBankAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetVirtualBankAccountRequest" nillable="true" type="tns:AFSGetVirtualBankAccountRequest"/>
+  <xs:complexType name="AFSGetVirtualBankAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BankAccountNo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSGetVirtualBankAccountResponse" nillable="true" type="tns:AFSGetVirtualBankAccountResponse"/>
+  <xs:complexType name="AFSUpdateCustomerEinvoiceInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFSObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EinvoicePartyId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReferenceID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Referencetype" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFSUpdateCustomerEinvoiceInfoRequest" nillable="true" type="tns:AFSUpdateCustomerEinvoiceInfoRequest"/>
+</xs:schema>

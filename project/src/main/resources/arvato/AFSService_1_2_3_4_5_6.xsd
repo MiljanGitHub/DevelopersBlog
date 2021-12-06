@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Customer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Customer">
+  <xs:simpleType name="AFSSocialTitle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet"/>
+      <xs:enumeration value="Mr"/>
+      <xs:enumeration value="Mrs"/>
+      <xs:enumeration value="Miss"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AFSSocialTitle" nillable="true" type="tns:AFSSocialTitle"/>
+</xs:schema>

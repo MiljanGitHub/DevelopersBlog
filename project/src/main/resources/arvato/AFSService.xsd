@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="AFSService_1.xsd" namespace="http://Horizon.ExternalServices.AFS"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6_7_8_9_10.xsd" namespace="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Client"/>
+  <xs:import schemaLocation="AFSService_1_2_3_4_5_6_7_8_9_10_11.xsd" namespace="http://schemas.datacontract.org/2004/07/AFSServices.Entities.Customer"/>
+  <xs:element name="HelloWorld">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="myValue" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HelloWorldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HelloWorldResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q1:AFSUser" xmlns:q1="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerByNumberResult" nillable="true" type="q2:AFSCustomerResponse" xmlns:q2="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByNumberAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q3:AFSUser" xmlns:q3="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="searchOptions" nillable="true" type="q4:AFSSearchOptions" xmlns:q4="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByNumberAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerByNumberAdvResult" nillable="true" type="q5:AFSCustomerResponse" xmlns:q5="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q6:AFSUser" xmlns:q6="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="orgno" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ssn" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="bornDate" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="postalPlace" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerResult" nillable="true" type="q7:AFSCustomerResponse" xmlns:q7="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q8:AFSUser" xmlns:q8="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="orgno" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ssn" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="bornDate" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="postalPlace" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="searchOptions" nillable="true" type="q9:AFSSearchOptions" xmlns:q9="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerAdvResult" nillable="true" type="q10:AFSCustomerResponse" xmlns:q10="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q11:AFSUser" xmlns:q11="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q12:AFSCustomer" xmlns:q12="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCustomerResult" nillable="true" type="q13:AFSCustomerResponse" xmlns:q13="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q14:AFSUser" xmlns:q14="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q15:AFSCustomer" xmlns:q15="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="searchOptions" nillable="true" type="q16:AFSSearchOptions" xmlns:q16="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCustomerAdvResult" nillable="true" type="q17:AFSCustomerResponse" xmlns:q17="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerPurchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q18:AFSUser" xmlns:q18="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="invoiceDate" type="xs:dateTime"/>
+        <xs:element minOccurs="0" name="dueDate" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerPurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCustomerPurchaseResult" nillable="true" type="q19:AFSCustomerPurchaseResponse" xmlns:q19="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q20:AFSUser" xmlns:q20="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerLimitRequest" nillable="true" type="q21:AFSCustomerLimitRequest" xmlns:q21="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerLimitResult" nillable="true" type="q22:AFSCustomerLimitResponse" xmlns:q22="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q23:AFSUser" xmlns:q23="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLedgerResult" nillable="true" type="q24:AFSLedgerResponse" xmlns:q24="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLedgerAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q25:AFSUser" xmlns:q25="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ledgerOptions" nillable="true" type="q26:AFSLedgerOptions" xmlns:q26="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLedgerAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLedgerAdvResult" nillable="true" type="q27:AFSLedgerResponse" xmlns:q27="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q28:AFSUser" xmlns:q28="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q29:AFSCustomer" xmlns:q29="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCustomerResult" nillable="true" type="q30:AFSResponse" xmlns:q30="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q31:AFSUser" xmlns:q31="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q32:AFSCustomer" xmlns:q32="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCustomerResult" nillable="true" type="q33:AFSCustomerResponse" xmlns:q33="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q34:AFSUser" xmlns:q34="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoiceResult" nillable="true" type="q35:AFSInvoiceGetResponse" xmlns:q35="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q36:AFSUser" xmlns:q36="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoice" nillable="true" type="q37:AFSInvoice" xmlns:q37="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertInvoiceResult" nillable="true" type="q38:AFSInvoiceResponse" xmlns:q38="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q39:AFSUser" xmlns:q39="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoice" nillable="true" type="q40:AFSInvoice" xmlns:q40="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="printOptions" nillable="true" type="q41:AFSPrintOptions" xmlns:q41="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertInvoiceAdvResult" nillable="true" type="q42:AFSInvoiceResponse" xmlns:q42="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAndCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q43:AFSUser" xmlns:q43="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q44:AFSCustomer" xmlns:q44="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoice" nillable="true" type="q45:AFSInvoice" xmlns:q45="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAndCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertInvoiceAndCustomerResult" nillable="true" type="q46:AFSInvoiceResponse" xmlns:q46="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAndCustomerAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q47:AFSUser" xmlns:q47="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q48:AFSCustomer" xmlns:q48="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoice" nillable="true" type="q49:AFSInvoice" xmlns:q49="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="printOptions" nillable="true" type="q50:AFSPrintOptions" xmlns:q50="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoiceAndCustomerAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertInvoiceAndCustomerAdvResult" nillable="true" type="q51:AFSInvoiceResponse" xmlns:q51="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q52:AFSUser" xmlns:q52="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="creditNote" nillable="true" type="q53:AFSInvoice" xmlns:q53="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceToCredit" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="amountToCredit" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreditInvoiceResult" nillable="true" type="q54:AFSInvoiceCreditResponse" xmlns:q54="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q55:AFSUser" xmlns:q55="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOrderResult" nillable="true" type="q56:AFSOrderResponse" xmlns:q56="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q57:AFSUser" xmlns:q57="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customerNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="orderStatus" type="q58:AFSOrderStatus" xmlns:q58="http://schemas.datacontract.org/2004/07/Horizon.AFS.General"/>
+        <xs:element minOccurs="0" name="orderNo_From" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="orderNo_To" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="orderDate_From" type="xs:dateTime"/>
+        <xs:element minOccurs="0" name="orderDate_To" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchOrderResult" nillable="true" type="q59:AFSOrderSearchResponse" xmlns:q59="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q60:AFSUser" xmlns:q60="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q61:AFSOrder" xmlns:q61="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrderResult" nillable="true" type="q62:AFSOrderResponse" xmlns:q62="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q63:AFSUser" xmlns:q63="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q64:AFSOrder" xmlns:q64="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderOptions" nillable="true" type="q65:AFSOrderOptions" xmlns:q65="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrderAdvResult" nillable="true" type="q66:AFSOrderResponse" xmlns:q66="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAndCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q67:AFSUser" xmlns:q67="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q68:AFSCustomer" xmlns:q68="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q69:AFSOrder" xmlns:q69="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAndCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrderAndCustomerResult" nillable="true" type="q70:AFSOrderResponse" xmlns:q70="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAndCustomerAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q71:AFSUser" xmlns:q71="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q72:AFSCustomer" xmlns:q72="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q73:AFSOrder" xmlns:q73="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderOptions" nillable="true" type="q74:AFSOrderOptions" xmlns:q74="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderAndCustomerAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrderAndCustomerAdvResult" nillable="true" type="q75:AFSOrderResponse" xmlns:q75="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q76:AFSUser" xmlns:q76="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q77:AFSOrder" xmlns:q77="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOrderResult" nillable="true" type="q78:AFSOrderResponse" xmlns:q78="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q79:AFSUser" xmlns:q79="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q80:AFSOrder" xmlns:q80="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOrderAdvResult" nillable="true" type="q81:AFSOrderResponse" xmlns:q81="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q82:AFSUser" xmlns:q82="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentCost" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="fee" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="shipmentProvider" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentPackageNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderResult" nillable="true" type="q83:AFSOrderShipmentResponse" xmlns:q83="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q84:AFSUser" xmlns:q84="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentCost" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="fee" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="shipmentProvider" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentPackageNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="printOptions" nillable="true" type="q85:AFSPrintOptions" xmlns:q85="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderAdvResult" nillable="true" type="q86:AFSOrderShipmentResponse" xmlns:q86="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q87:AFSUser" xmlns:q87="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipment" nillable="true" type="q88:AFSOrderShipment" xmlns:q88="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderPartlyResult" nillable="true" type="q89:AFSOrderShipmentResponse" xmlns:q89="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartlyAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q90:AFSUser" xmlns:q90="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipment" nillable="true" type="q91:AFSOrderShipment" xmlns:q91="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="printOptions" nillable="true" type="q92:AFSPrintOptions" xmlns:q92="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartlyAdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderPartlyAdvResult" nillable="true" type="q93:AFSOrderShipmentResponse" xmlns:q93="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q94:AFSUser" xmlns:q94="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOrderPrintResult" nillable="true" type="q95:AFSReportDocumentResponse" xmlns:q95="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicePrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q96:AFSUser" xmlns:q96="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicePrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoicePrintResult" nillable="true" type="q97:AFSReportDocumentResponse" xmlns:q97="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q98:AFSUser" xmlns:q98="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="report" nillable="true" type="q99:AFSReport" xmlns:q99="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportPrintResult" nillable="true" type="q100:AFSReportDocumentResponse" xmlns:q100="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderPrintLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q101:AFSUser" xmlns:q101="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderPrintLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOrderPrintLinkResult" nillable="true" type="q102:AFSReportLinkResponse" xmlns:q102="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicePrintLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q103:AFSUser" xmlns:q103="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicePrintLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoicePrintLinkResult" nillable="true" type="q104:AFSReportLinkResponse" xmlns:q104="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPrintLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q105:AFSUser" xmlns:q105="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="report" nillable="true" type="q106:AFSReport" xmlns:q106="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPrintLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportPrintLinkResult" nillable="true" type="q107:AFSReportLinkResponse" xmlns:q107="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailInvoicePrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q108:AFSUser" xmlns:q108="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="emailHeader" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="emailBody" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailInvoicePrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EMailInvoicePrintResult" nillable="true" type="q109:AFSResponse" xmlns:q109="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailReportPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q110:AFSUser" xmlns:q110="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="report" nillable="true" type="q111:AFSReport" xmlns:q111="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="emailHeader" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="emailBody" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailReportPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EMailReportPrintResult" nillable="true" type="q112:AFSResponse" xmlns:q112="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInvoicePrintLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q113:AFSUser" xmlns:q113="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInvoicePrintLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerInvoicePrintLinkResult" nillable="true" type="q114:AFSReportLinkResponse" xmlns:q114="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInvoicePrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q115:AFSUser" xmlns:q115="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerInvoicePrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerInvoicePrintResult" nillable="true" type="q116:AFSReportDocumentResponse" xmlns:q116="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderWithInvoiceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q117:AFSUser" xmlns:q117="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentCost" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="fee" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="shipmentProvider" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipmentPackageNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceInfo" nillable="true" type="q118:AFSOrderShipmentInvoiceInfo" xmlns:q118="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderWithInvoiceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderWithInvoiceInfoResult" nillable="true" type="q119:AFSOrderShipmentResponse" xmlns:q119="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartlyWithInvoiceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q120:AFSUser" xmlns:q120="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="shipment" nillable="true" type="q121:AFSOrderShipment" xmlns:q121="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceInfo" nillable="true" type="q122:AFSOrderShipmentInvoiceInfo" xmlns:q122="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipOrderPartlyWithInvoiceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipOrderPartlyWithInvoiceInfoResult" nillable="true" type="q123:AFSOrderShipmentResponse" xmlns:q123="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q124:AFSUser" xmlns:q124="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="creditNote" nillable="true" type="q125:AFSInvoice" xmlns:q125="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoicesToCredit" nillable="true" type="q126:ArrayOfAFSInvoiceCreditInfo" xmlns:q126="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreditInvoicesResult" nillable="true" type="q127:AFSInvoiceCreditResponse" xmlns:q127="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q128:AFSUser" xmlns:q128="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelOrderResult" nillable="true" type="q129:AFSOrderResponse" xmlns:q129="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q130:AFSUser" xmlns:q130="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreditOrderResult" nillable="true" type="q131:AFSCreditOrderResponse" xmlns:q131="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTermsAndConditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q132:AFSUser" xmlns:q132="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="accountTermsAndConditionsRequest" nillable="true" type="q133:AFSAccountTermsAndConditionsRequest" xmlns:q133="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTermsAndConditionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAccountTermsAndConditionsResult" nillable="true" type="q134:AFSAccountTermsAndConditionsResponse" xmlns:q134="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTermsAndConditionsSecci">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q135:AFSUser" xmlns:q135="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="accountTermsAndConditionsSecciRequest" nillable="true" type="q136:AFSAccountTermsAndConditionsSecciRequest" xmlns:q136="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTermsAndConditionsSecciResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAccountTermsAndConditionsSecciResult" nillable="true" type="q137:AFSAccountTermsAndConditionsSecciResponse" xmlns:q137="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptAccountTermsAndConditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q138:AFSUser" xmlns:q138="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="accountTermsAndConditionsRequest" nillable="true" type="q139:AFSAcceptAccountTermsAndConditionsRequest" xmlns:q139="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptAccountTermsAndConditionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcceptAccountTermsAndConditionsResult" nillable="true" type="q140:AFSAcceptAccountTermsAndConditionsResponse" xmlns:q140="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerHasAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q141:AFSUser" xmlns:q141="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="checkCustomerHasAccountRequest" nillable="true" type="q142:AFSAccountCheckCustomerHasAccountRequest" xmlns:q142="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerHasAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCustomerHasAccountResult" nillable="true" type="q143:AFSAccountCheckCustomerHasAccountResponse" xmlns:q143="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceReservation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q144:AFSUser" xmlns:q144="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="reservation" nillable="true" type="q145:AFSReservation" xmlns:q145="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceReservationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PlaceReservationResult" nillable="true" type="q146:AFSReservationResponse" xmlns:q146="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceReservationWithPaymentType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q147:AFSUser" xmlns:q147="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="reservation" nillable="true" type="q148:AFSReservationWithPaymentType" xmlns:q148="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceReservationWithPaymentTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PlaceReservationWithPaymentTypeResult" nillable="true" type="q149:AFSReservationWithPaymentTypeResponse" xmlns:q149="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelReservation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q150:AFSUser" xmlns:q150="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="cancelReservation" nillable="true" type="q151:AFSCancelReservation" xmlns:q151="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelReservationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelReservationResult" nillable="true" type="q152:AFSCancelReservationResponse" xmlns:q152="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAndPlaceReservation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q153:AFSUser" xmlns:q153="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="customer" nillable="true" type="q154:AFSCustomer" xmlns:q154="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="reservation" nillable="true" type="q155:AFSReservation" xmlns:q155="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="additionalReservationInfo" nillable="true" type="q156:AFSAdditionalReservationInfo" xmlns:q156="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAndPlaceReservationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCustomerAndPlaceReservationResult" nillable="true" type="q157:AFSCheckCustomerAndReservationResponse" xmlns:q157="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q158:AFSUser" xmlns:q158="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceTextRequest" nillable="true" type="q159:AFSInvoiceTextRequest" xmlns:q159="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoiceTextResult" nillable="true" type="q160:AFSInvoiceTextResponse" xmlns:q160="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInvoiceDueDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q161:AFSUser" xmlns:q161="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceTextRequest" nillable="true" type="q162:AFSUpdateInvoiceDueDateRequest" xmlns:q162="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInvoiceDueDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateInvoiceDueDateResult" nillable="true" type="q163:AFSUpdateInvoiceDueDateResponse" xmlns:q163="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInvoiceStopFlags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q164:AFSUser" xmlns:q164="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="invoiceTextRequest" nillable="true" type="q165:AFSUpdateInvoiceStopFlagsRequest" xmlns:q165="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInvoiceStopFlagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateInvoiceStopFlagsResult" nillable="true" type="q166:AFSUpdateInvoiceStopFlagsResponse" xmlns:q166="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMerchantInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q167:AFSUser" xmlns:q167="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q168:AFSUpdateMerchantInfoRequest" xmlns:q168="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMerchantInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMerchantInfoResult" nillable="true" type="q169:AFSUpdateMerchantInfoResponse" xmlns:q169="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDirectDebitContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q170:AFSUser" xmlns:q170="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q171:AFSGetDirectDebitContractRequest" xmlns:q171="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDirectDebitContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDirectDebitContractResult" nillable="true" type="q172:AFSGetDirectDebitContractResponse" xmlns:q172="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptDirectDebitContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q173:AFSUser" xmlns:q173="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q174:AFSAcceptDirectDebitContractRequest" xmlns:q174="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptDirectDebitContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcceptDirectDebitContractResult" nillable="true" type="q175:AFSAcceptDirectDebitContractResponse" xmlns:q175="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q176:AFSUser" xmlns:q176="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q177:AFSGetClientLimitRequest" xmlns:q177="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClientLimitResult" nillable="true" type="q178:AFSGetClientLimitResponse" xmlns:q178="http://schemas.datacontract.org/2004/07/Horizon.ExternalServices.AFS.General.Client"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVirtualBankAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q179:AFSUser" xmlns:q179="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q180:AFSGetVirtualBankAccountRequest" xmlns:q180="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVirtualBankAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVirtualBankAccountResult" nillable="true" type="q181:AFSGetVirtualBankAccountResponse" xmlns:q181="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerEinvoiceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="q182:AFSUser" xmlns:q182="http://Horizon.ExternalServices.AFS"/>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q183:AFSUpdateCustomerEinvoiceInfoRequest" xmlns:q183="http://Horizon.ExternalServices.AFS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerEinvoiceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCustomerEinvoiceInfoResult" nillable="true" type="q184:AFSUpdateCustomerEinvoiceInfoResponse" xmlns:q184="http://schemas.datacontract.org/2004/07/AFSServices.Entities.Customer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
